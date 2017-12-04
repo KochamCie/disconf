@@ -5,7 +5,7 @@ function fetchItems(appId, envId, version, curConfigId) {
 
     var parameter = ""
 
-    url = "/api/web/config/simple/list";
+    var url = "/api/web/config/simple/list";
     url += "?";
     url += "appId=" + appId + "&";
     url += "envId=" + envId + "&";
@@ -45,4 +45,15 @@ function fetchItems(appId, envId, version, curConfigId) {
 
         return Util.string.format(mainTpl, key, link, style);
     }
+}
+
+
+function isJsonString(str) {
+    try {
+        if (typeof JSON.parse(str) == "object") {
+            return true;
+        }
+    } catch(e) {
+    }
+    return false;
 }

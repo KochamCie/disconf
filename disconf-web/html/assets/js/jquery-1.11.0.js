@@ -3284,10 +3284,10 @@ jQuery.extend({
 				stateString = tuple[ 3 ];
 			// promise[ done | fail | progress ] = list.add
 			promise[ tuple[1] ] = list.add;
-            console.log(i)
-			console.log(tuple)
-			console.log("==========================")
-			console.log("==========================")
+            // console.log(i)
+			// console.log(tuple)
+			// console.log("==========================")
+			// console.log("==========================")
 			// Handle state
 			if ( stateString ) {
 				list.add(function() {
@@ -3297,7 +3297,7 @@ jQuery.extend({
 				// [ reject_list | resolve_list ].disable; progress_list.lock
 				}, tuples[ i ^ 1 ][ 2 ].disable, tuples[ 2 ][ 2 ].lock );
 			}
-			console.log(arguments)
+			//console.log(arguments)
 
 			// deferred[ resolve | reject | notify ]
 			deferred[ tuple[0] ] = function() {
@@ -3306,9 +3306,9 @@ jQuery.extend({
 			};
 			deferred[ tuple[0] + "With" ] = list.fireWith;
 		});
-		console.log("~~~~~~~~~~~~~~~~~~~~~~~")
-		console.log(deferred)
-		console.log("~~~~~~~~~~~~~~~~~~~~~~~")
+		// console.log("~~~~~~~~~~~~~~~~~~~~~~~")
+		// console.log(deferred)
+		// console.log("~~~~~~~~~~~~~~~~~~~~~~~")
 		// Make the deferred a promise
 		promise.promise( deferred );
 
@@ -3316,7 +3316,7 @@ jQuery.extend({
 		if ( func ) {
 			func.call( deferred, deferred );
 		}
-		console.log("all done")
+		//console.log("all done")
 		// All done!
 		return deferred;
 	},
