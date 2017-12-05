@@ -39,23 +39,26 @@
                         // 绑定事件
                         $("#value").bind("click", function(e){
                             // value，
+                            app.reload();
                             var jsons = JSON.parse($(this).val());
                             // render
-                            // create the editor
-                            var container = document.getElementById("jsoneditor");
-                            var options = {};
-                            var editor = new JSONEditor(container, options);
-
-                            // set json
-                            var json = {
-                                "Array": [1, 2, 3],
-                                "Boolean": true,
-                                "Null": null,
-                                "Number": 123,
-                                "Object": {"a": "b", "c": "d"},
-                                "String": "Hello World"
-                            };
-                            editor.set(json);
+                            app.load(jsons);
+                            app.resize();
+                            //弹出即全屏
+                            var index = layer.open({
+                                title:"编辑配置项:"+result.appName + "<b style='color:greenyellow'>*</b> " + result.version + " <b style='color:greenyellow'>*</b> "
+                                + result.envName,
+                                type: 1,
+                                content: $("#je-container"),
+                                area: ['320px', '195px'],
+                                maxmin: true,
+                                cancel: function () {
+                                    if($("#forButtonSave").val()){
+                                        $("#value").val($("#forButtonSave").val())
+                                    }
+                                }
+                            });
+                            layer.full(index);
                             // $.each(jsons,function(n,config){
                             //     console.log(n);
                             //     for(var key in config){

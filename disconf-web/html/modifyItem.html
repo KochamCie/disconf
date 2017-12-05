@@ -1,100 +1,107 @@
 <!DOCTYPE html>
 <html class="en">
 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Disconf - 分布式配置管理平台</title>
-
-
-        <link rel="stylesheet" href="dep/bootstrap/css/bootstrap.css" />
-        <!--[if lte IE 6]>
-        <link rel="stylesheet" href="dep/bootstrap/css/bootstrap-ie6.css" />
-        <![endif]-->
-        <!--[if lte IE 7]>
-        <link rel="stylesheet" href="dep/bootstrap/css/ie.css" />
-        <![endif]-->
-        <![if !IE]>
-        <link rel="stylesheet" href="dep/bootstrap/css/noie.css" />
-        <![endif]>
-        <link rel="stylesheet" href="dep/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
-        <link rel="stylesheet" type="text/css" href="assets/css/project.css" />
+    <title>Disconf - 分布式配置管理平台</title>
 
 
-        <link href="dep/jsoneditor.min.css" rel="stylesheet" type="text/css">
-    </head>
+    <link href="assets/css/jsoneditor/app.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jsoneditor/core.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jsoneditor/jsoneditor.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jsoneditor/jquery.reject.css" rel="stylesheet" type="text/css">
 
-    <body>
-        
-        <div class="navbar navbar-fixed-top clearfix">
-            <div class="navbar-inner zu-top">
-                <div class="container">
-                    <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+
+    <link rel="stylesheet" href="dep/bootstrap/css/bootstrap.css"/>
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="dep/bootstrap/css/bootstrap-ie6.css"/>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="dep/bootstrap/css/ie.css"/>
+    <![endif]-->
+    <![if !IE]>
+    <link rel="stylesheet" href="dep/bootstrap/css/noie.css"/>
+    <![endif]>
+    <link rel="stylesheet" href="dep/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/project.css"/>
+
+
+</head>
+
+<body>
+
+
+<div class="navbar navbar-fixed-top clearfix">
+    <div class="navbar-inner zu-top">
+        <div class="container">
+            <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+
+                <a id="brand_url" href="/main.html" class="brand" style="margin-left:0px;padding:8px;"> <span
+                        class="zu-top-nav-link">Disconf</span> </a>
+
+                <span class="span2"> </span>
+                <form class="navbar-form pull-left">
+                    <button class="btn btn-warning" title="GitHub" type="button" style=""
+                            onclick="window.open('https://github.com/knightliao/disconf', '_blank');">
+                        <i class="icon-circle-arrow-up  icon-white"></i> <b>GitHub</b>
                     </button>
-                    <div class="nav-collapse collapse">
+                </form>
 
-                        <a id="brand_url" href="/main.html" class="brand" style="margin-left:0px;padding:8px;"> <span class="zu-top-nav-link">Disconf</span> </a>
+                <ul class="nav pull-right">
 
-                        <span class="span2"> </span>
-                        <form class="navbar-form pull-left">
-                            <button class="btn btn-warning" title="GitHub" type="button" style=""  onclick="window.open('https://github.com/knightliao/disconf', '_blank');">
-                                <i class="icon-circle-arrow-up  icon-white"></i> <b>GitHub</b>
-                            </button>
-                        </form>
-                        
-                        <ul class="nav pull-right" >
-                            
-                            <div class="login-yes"  style="display:none;padding:10px;">
-                                <li style="display:inline;">
-                                    <a href="#">
-                                        <span class="zu-top-nav-link loginName" id="username"></span>
-                                    </a>
-                                </li>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <li style="display:inline;" class="dropdown">
-                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                                        <span class="zu-top-nav-link">新建<b class="caret"></b></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="/newapp.html">新建APP</a></li>
-                                        <li><a href="/newconfig_item.html">新建配置项</a></li>
-                                        <li><a href="/newconfig_file.html">新建配置文件</a></li>
-                                        <li><a href="/newrole_resource.html">新建权限项</a></li>
-                                    </ul>
-                                </li>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <li style="display:inline;">
-                                    <a href="/modifypassword.html">
-                                        <span class="zu-top-nav-link" >修改密码</span>
-                                    </a>
-                                </li>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <li style="display:inline;">
-                                    <a href="#" id="signout">
-                                        <span class="zu-top-nav-link" >退出</span>
-                                    </a>
-                                </li>
-                            </div>
-                            
-                            <div class="login-no"  style="padding:10px;">
-                                <li style="display:inline;">
-                                    <a href="/login.html"><span class="zu-top-nav-link">登录</span></a>
-                                </li>   
-                            </div>
-                            
-                        </ul>
+                    <div class="login-yes" style="display:none;padding:10px;">
+                        <li style="display:inline;">
+                            <a href="#">
+                                <span class="zu-top-nav-link loginName" id="username"></span>
+                            </a>
+                        </li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <li style="display:inline;" class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="zu-top-nav-link">新建<b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/newapp.html">新建APP</a></li>
+                                <li><a href="/newconfig_item.html">新建配置项</a></li>
+                                <li><a href="/newconfig_file.html">新建配置文件</a></li>
+                                <li><a href="/newrole_resource.html">新建权限项</a></li>
+                            </ul>
+                        </li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <li style="display:inline;">
+                            <a href="/modifypassword.html">
+                                <span class="zu-top-nav-link">修改密码</span>
+                            </a>
+                        </li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <li style="display:inline;">
+                            <a href="#" id="signout">
+                                <span class="zu-top-nav-link">退出</span>
+                            </a>
+                        </li>
                     </div>
-                </div>
-                
+
+                    <div class="login-no" style="padding:10px;">
+                        <li style="display:inline;">
+                            <a href="/login.html"><span class="zu-top-nav-link">登录</span></a>
+                        </li>
+                    </div>
+
+                </ul>
             </div>
         </div>
-    
+
+    </div>
+</div>
 
 
-<div id="Wrapper" class="clearfix">
+<div id="Wrapper" class="clearfix" style="z-index: 1000">
     <div id="Main" style="margin-top:50px;">
         <div class="container-fluid">
 
@@ -165,11 +172,51 @@
                         </form>
                     </div>
 
-                    <div id="jsoneditor" style="width: 550px; height: 600px;"></div>
+                    <div class="clear"></div>
                 </div>
+
+
+            </div>
+
+            <!-- json editor 编辑层-->
+            <div class="je-container hide" id="je-container">
+                <div class="row111">
+
+                    <div class="aw-content-wrap clearfix">
+                        <div class=" aw-main-content" style="min-height:700px;max-height:2000px">
+                            <div style="clear:both"></div>
+                            <div class="panel panel-default">
+                                <style type="text/css">
+
+                                </style>
+                                <div class="panel-heading">
+                                    <div class="media">
+                                        <div class="media-body">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div id="content-wrapper" style="height:600px">
+                                        <div id="jsonformatter" style="width: 48%; height: 512px;"></div>
+                                        <div id="splitter"></div>
+                                        <div id="jsoneditor" style="left: 597px; width: 48%;"></div>
+                                        <div class="clear"></div>
+                                        <input type="hidden" id="forButtonSave">
+                                    </div>
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+
+</div>
 </div>
 
 <!-- 详细信息单行模板-->
@@ -179,51 +226,60 @@
     </li>
 </div>
 
-        
-        <div id="footer">
-            <div id="BottomMain">
-                <div class="inner">
-                    <strong>
-                        <a href="#" class="dark">关于</a> &nbsp; 
-                    </strong>
-                    <strong>
-                        <a href="#" class="dark">升级</a> &nbsp; 
-                    </strong>
-                    <div class="sep10"></div>
-                    <span>分布式配置管理平台</span>
-                    <div class="sep10"></div>
-                    <span class="myfade">Theme by <a href="http://sov5.com/" target="_blank">Sov5搜索</a>，
+
+<div id="footer">
+    <div id="BottomMain">
+        <div class="inner">
+            <strong>
+                <a href="#" class="dark">关于</a> &nbsp;
+            </strong>
+            <strong>
+                <a href="#" class="dark">升级</a> &nbsp;
+            </strong>
+            <div class="sep10"></div>
+            <span>分布式配置管理平台</span>
+            <div class="sep10"></div>
+            <span class="myfade">Theme by <a href="http://sov5.com/" target="_blank">Sov5搜索</a>，
                         Power by 百度程序化广告交易工程平台技术部，
                     Copyright &copy; 2014~2016 </span>
-                </div>
-            </div>
         </div>
-        
-        <script src="assets/js/jquery-1.11.0.js"></script>
-        <script src="dep/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
-        <script src="dep/bootstrap/js/bootstrap.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/common.js"></script>
-        <script src="assets/js/jsoneditor.min.js"></script>
-        <script src="assets/js/jsonlint.js"></script>
+    </div>
+</div>
 
-        <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "//hm.baidu.com/hm.js?c4578bda90040ec19ded56112b82246f";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
+<script src="assets/js/jquery-1.11.0.js"></script>
+<script src="dep/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+<script src="dep/bootstrap/js/bootstrap.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/jsoneditor/jsoneditor.js"></script>
 
+<script src="assets/js/jsoneditor/notify.js"></script>
+<script src="assets/js/jsoneditor/splitter.js"></script>
+<script src="assets/js/jsoneditor/app.js"></script>
+<script src="assets/js/jsoneditor/jsonlint.js"></script>
+<script src="assets/js/jsoneditor/jquery.reject.js"></script>
+<script src="assets/js/jsoneditor/jquery.reject.360.js"></script>
+<script src="assets/js/jsoneditor/layer.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c4578bda90040ec19ded56112b82246f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+
+
+</script>
 
 
 <script src="assets/js/modifycommon.js"></script>
 <script src="assets/js/modifyItem.js"></script>
 
-        <script src="assets/js/footer.js"></script>
-    
-    </body>
+<script src="assets/js/footer.js"></script>
+
+</body>
 </html>
 
