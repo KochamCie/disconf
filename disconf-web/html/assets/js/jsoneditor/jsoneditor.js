@@ -2385,8 +2385,6 @@ JSONEditor.showDropDownList = function (params) {
 	select.style.position = 'absolute';
 	select.style.left = (params.x || 0) + 'px';
 	select.style.top = (params.y || 0) + 'px';
-// 层级
-    select.style.zIndex = 19891015;
 	params.values.forEach(function (v) {
 		var text = v.value || String(v);
 		var className = 'jsoneditor-option';
