@@ -219,13 +219,12 @@
                 + isRight + '</a>'
 
             // 2017年11月17日 15点52分
-            var test_url = '<a href="javascript:void(0);" class="rollback'+item.configId+'">' +
+            var rollback_url = '<a href="javascript:void(0);" class="rollback'+item.configId+'">' +
                 '<i title="回退" class="icon-fast-backward"></i></a>';
-
             return Util.string.format(mainTpl, '', item.appId, item.version, item.envId,
                 item.envName, type, item.key, item.createTime, item.modifyTime,
                 item.value, link, del_link, i + 1, downloadlink,
-                data_fetch_url, machine_url, test_url);
+                data_fetch_url, machine_url, rollback_url, item.javaClient, item.autoReload);
         }
     }
 
