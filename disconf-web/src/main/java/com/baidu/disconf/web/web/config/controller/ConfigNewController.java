@@ -27,6 +27,7 @@ import com.baidu.dsp.common.vo.JsonObjectBase;
 /**
  * 专用于配置新建
  *
+ * @modify 2017年12月21日 增加java_client及auto_reload字段的存入
  * @author liaoqiqi
  * @version 2014-6-24
  */

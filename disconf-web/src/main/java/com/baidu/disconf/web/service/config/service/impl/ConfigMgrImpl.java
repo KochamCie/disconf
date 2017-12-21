@@ -336,6 +336,9 @@ public class ConfigMgrImpl implements ConfigMgr {
         config.setValue(CodeUtils.utf8ToUnicode(confNewForm.getValue()));
         config.setStatus(Constants.STATUS_NORMAL);
 
+        config.setJavaClient(confNewForm.isJavaClient());
+        config.setAutoReload(confNewForm.isAutoReload());
+
         // 时间
         String curTime = DateUtils.format(new Date(), DataFormatConstants.COMMON_TIME_FORMAT);
         config.setCreateTime(curTime);

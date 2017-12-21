@@ -25,6 +25,30 @@ public class ConfNewForm {
     private Long envId;
     public static final String ENVID = "envId";
 
+    @NotNull(message = "javaClient.empty")
+    private boolean javaClient;
+    public static final String JAVACLIENT = "javaClient";
+
+    @NotNull(message = "autoReload.empty")
+    private boolean autoReload;
+    public static final String AUTORELOAD = "autoReload";
+
+    public boolean isJavaClient() {
+        return javaClient;
+    }
+
+    public void setJavaClient(boolean javaClient) {
+        this.javaClient = javaClient;
+    }
+
+    public boolean isAutoReload() {
+        return autoReload;
+    }
+
+    public void setAutoReload(boolean autoReload) {
+        this.autoReload = autoReload;
+    }
+
     public Long getAppId() {
         return appId;
     }

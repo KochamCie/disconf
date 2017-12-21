@@ -79,3 +79,22 @@ $("#envChoice").on('click', 'li a', function () {
     $("#envChoiceA span:first-child").text($(this).text());
     envId = $(this).attr('rel');
 });
+
+//
+// java client选项
+//
+
+var select_li = '<li><a name="0" href="#">否</a></li> <li><a name="1" href="#">是</a></li>';
+$("#javaClient").html(select_li);
+$("#autoReload").html(select_li);
+
+
+$("#javaClient").on('click', 'li a', function () {
+    $("#javaClientA span:first-child").text($(this).text());
+    javaClient = $(this).attr('name');
+});
+
+$("#autoReload").on('click', 'li a', function () {
+    $("#autoReloadA span:first-child").text($(this).text());
+    autoReload = $(this).attr('name');
+});

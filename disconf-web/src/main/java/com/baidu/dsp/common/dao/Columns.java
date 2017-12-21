@@ -37,6 +37,10 @@ public class Columns {
 
     public static final String ROLE_ID = "role_id";
 
+    public static final String JAVA_CLIENT = "java_client";
+
+    public static final String AUTO_RELOAD = "auto_reload";
+
     public static final class RoleColumns {
         public final static String ROLE_NAME = "role_name";
     }

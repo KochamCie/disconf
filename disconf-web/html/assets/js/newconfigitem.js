@@ -1,6 +1,8 @@
 var appId = -1;
 var envId = -1;
 var version = "";
+var javaClient = -1;
+var autoReload = -1;
 getSession();
 
 // 提交
@@ -14,8 +16,9 @@ $("#item_submit").on("click", function (e) {
     var key = $("#key").val();
     var value = $("#value").val();
 
+    console.log(javaClient+","+autoReload+","+envId)
     // 验证
-    if (appId < 1 || envId < 1 || version == "" || !value || !key) {
+    if (appId < 1 || envId < 1 || javaClient < 0 || autoReload < 0 || version == "" || !value || !key) {
         $("#error").removeClass("hide");
         $("#error").html("表单不能为空或填写格式错误！");
         return;
@@ -28,7 +31,9 @@ $("#item_submit").on("click", function (e) {
             "version": version,
             "key": key,
             "envId": envId,
-            "value": value
+            "value": value,
+            "javaClient": javaClient,
+            "autoReload": autoReload
         }
     }).done(function (data) {
         $("#error").removeClass("hide");

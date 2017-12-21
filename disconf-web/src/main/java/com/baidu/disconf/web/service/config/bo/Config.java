@@ -75,4 +75,16 @@ public class Config extends BaseObject<Long> {
     @Column(value = Columns.UPDATE_TIME)
     private String updateTime;
 
+    /**
+     * 是否是java客户端方式托管的配置
+     */
+    @Column(value=Columns.JAVA_CLIENT)
+    private boolean javaClient;
+
+    /**
+     * 是否自动实时加载不用重启客户端服务
+     */
+    @Column(value=Columns.AUTO_RELOAD)
+    private boolean autoReload;
+
 }
