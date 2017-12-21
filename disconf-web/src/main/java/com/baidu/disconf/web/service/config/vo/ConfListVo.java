@@ -29,6 +29,49 @@ public class ConfListVo {
 
     private String modifyTime;
 
+    private boolean javaClient;
+
+    private boolean autoReload;
+
+    public boolean isJavaClient() {
+        return javaClient;
+    }
+
+    @Override
+    public String toString() {
+        return "ConfListVo{" +
+                "configId=" + configId +
+                ", appName='" + appName + '\'' +
+                ", appId=" + appId +
+                ", version='" + version + '\'' +
+                ", envId=" + envId +
+                ", envName='" + envName + '\'' +
+                ", type='" + type + '\'' +
+                ", typeId=" + typeId +
+                ", key='" + key + '\'' +
+                ", value='" + value + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", modifyTime='" + modifyTime + '\'' +
+                ", javaClient=" + javaClient +
+                ", autoReload=" + autoReload +
+                ", machineSize=" + machineSize +
+                ", machineList=" + machineList +
+                ", errorNum=" + errorNum +
+                '}';
+    }
+
+    public void setJavaClient(boolean javaClient) {
+        this.javaClient = javaClient;
+    }
+
+    public boolean isAutoReload() {
+        return autoReload;
+    }
+
+    public void setAutoReload(boolean autoReload) {
+        this.autoReload = autoReload;
+    }
+
     //
     // zk data
     //
@@ -154,14 +197,6 @@ public class ConfListVo {
 
     public void setMachineList(List<ZkDisconfDataItem> machineList) {
         this.machineList = machineList;
-    }
-
-    @Override
-    public String toString() {
-        return "ConfListVo [configId=" + configId + ", appName=" + appName + ", appId=" + appId + ", version=" +
-                   version + ", envId=" + envId + ", envName=" + envName + ", type=" + type + ", typeId=" + typeId +
-                   ", key=" + key + ", value=" + value + ", createTime=" + createTime + ", modifyTime=" + modifyTime +
-                   "]";
     }
 
 }

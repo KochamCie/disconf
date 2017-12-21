@@ -32,6 +32,11 @@
                         result.appName + "<b style='color:greenyellow'>*</b> " + result.version + " <b style='color:greenyellow'>*</b> "
                         + result.envName);
 
+                    // 展示java配置信息
+                    $("#javaClient").text(result.javaClient);
+                    $("#autoReload").text(result.autoReload);
+
+
                     // 判断是否是json格式，用于启动界面化配置
                     if (isJsonString(result.value)) {
                         $("#value").attr("readonly", "readonly")

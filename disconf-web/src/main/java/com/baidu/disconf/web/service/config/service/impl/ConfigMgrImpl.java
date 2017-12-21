@@ -489,6 +489,9 @@ public class ConfigMgrImpl implements ConfigMgr {
         confListVo.setType(DisConfigTypeEnum.getByType(config.getType()).getModelName());
         confListVo.setTypeId(config.getType());
 
+        confListVo.setJavaClient(config.isJavaClient());
+        confListVo.setAutoReload(config.isAutoReload());
+
         //
         //
         //
