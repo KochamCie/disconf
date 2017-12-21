@@ -1,6 +1,8 @@
 var appId = -1;
 var envId = -1;
 var version = "";
+var javaClient = -1;
+var autoReload = -1;
 getSession();
 
 var uploadWithFile = -1;
@@ -49,7 +51,7 @@ function validate2(formData, jqForm, options) {
     }
 
     // 验证
-    if (appId < 1 || envId < 1 || version == "") {
+    if (appId < 1 || envId < 1 || version == "" || javaClient < 0 || autoReload < 0) {
         $("#error").show();
         $("#error").html("表单不能为空或填写格式错误！");
         return false;
@@ -67,6 +69,16 @@ function validate2(formData, jqForm, options) {
         name: 'envId',
         value: envId
     });
+
+    formData.push({
+        name: 'javaClient',
+        value: javaClient
+    })
+
+    formData.push({
+        name: 'autoReload',
+        value: autoReload
+    })
 
     return true;
 }
@@ -235,6 +247,7 @@ $("#uploadChoice").on(
                         return false;
                     }
 
+                    console.log(javaClient+","+autoReload+","+envId)
                     $.ajax({
                         type: "POST",
                         url: "/api/web/config/filetext",
@@ -243,7 +256,9 @@ $("#uploadChoice").on(
                             "envId": envId,
                             "version": version,
                             "fileContent": fileContent,
-                            "fileName": fileName
+                            "fileName": fileName,
+                            "javaClient": javaClient,
+                            "autoReload": autoReload
                         }
                     }).done(function (data) {
                         $("#error").removeClass("hide");

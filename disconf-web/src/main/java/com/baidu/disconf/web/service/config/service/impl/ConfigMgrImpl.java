@@ -344,6 +344,8 @@ public class ConfigMgrImpl implements ConfigMgr {
         config.setCreateTime(curTime);
         config.setUpdateTime(curTime);
 
+        LOG.info("prepare to create config :{}",config.toString());
+
         configDao.create(config);
         configHistoryMgr.createOne(config.getId(), "", config.getValue());
 

@@ -33,6 +33,7 @@ public class ConfNewForm {
     private boolean autoReload;
     public static final String AUTORELOAD = "autoReload";
 
+
     public boolean isJavaClient() {
         return javaClient;
     }

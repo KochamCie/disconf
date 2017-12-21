@@ -106,7 +106,8 @@ public class ConfigNewController extends BaseController {
         ConfNewItemForm confNewItemForm = new ConfNewItemForm(confNewForm);
         confNewItemForm.setKey(file.getOriginalFilename());
         confNewItemForm.setValue(fileContent);
-
+        confNewItemForm.setJavaClient(confNewForm.isJavaClient());
+        confNewItemForm.setAutoReload(confNewForm.isAutoReload());
         // 业务校验
         configValidator.validateNew(confNewItemForm, DisConfigTypeEnum.FILE);
 
@@ -136,6 +137,8 @@ public class ConfigNewController extends BaseController {
         ConfNewItemForm confNewItemForm = new ConfNewItemForm(confNewForm);
         confNewItemForm.setKey(fileName);
         confNewItemForm.setValue(fileContent);
+        confNewItemForm.setJavaClient(confNewForm.isJavaClient());
+        confNewItemForm.setAutoReload(confNewForm.isAutoReload());
 
         // 业务校验
         configValidator.validateNew(confNewItemForm, DisConfigTypeEnum.FILE);
