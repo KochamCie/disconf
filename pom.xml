@@ -35,7 +35,7 @@
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 
         <!-- JAVA环境 -->
-        <java.version>1.6</java.version>
+        <java.version>1.8</java.version>
         <source.version>1.6</source.version>
         <target.version>1.6</target.version>
         <spring.version>4.1.7.RELEASE</spring.version>
