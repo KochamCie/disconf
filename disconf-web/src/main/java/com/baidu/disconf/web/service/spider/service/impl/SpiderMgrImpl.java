@@ -102,6 +102,7 @@ public class SpiderMgrImpl implements SpiderMgr {
             sb.append("<br>");
             sb.append("<br>");
             List<String> listXwb = HandlerData.createSqlForXwb(HandlerData.getMonthInfo(next));
+            LOG.info("listXwb");
             int i=0;
             for (String str : listXwb
                     ) {
@@ -112,13 +113,24 @@ public class SpiderMgrImpl implements SpiderMgr {
                 }
                 i++;
             }
-
+            LOG.info("sb.length() : {}", sb.length());
+            if(sb.length()<99){
+                return false;
+            }
             // send email
+
+
+
 
             String sendTo = "renns@newhope.cn;gaogj@newhope.cn;tengpf@newhope.cn";
             Date now = new Date();
             // 跨年添加情况
-            int month = (now.getMonth()+1)==12?1:now.getMonth()+1;
+
+            // 处于1月添加2月： 0+1 == 12？ 1：0+2
+            // 处于12月添加1月： 11+1 == 12？ 1：M+2
+
+
+            int month = (now.getMonth()+1)==12?1:now.getMonth()+2;
             int year  = (now.getMonth()+1)==12?now.getYear()+1901:now.getYear()+1900;
 
 
