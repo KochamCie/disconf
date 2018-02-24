@@ -122,7 +122,7 @@ public class SpiderMgrImpl implements SpiderMgr {
 
 
 
-            String sendTo = "renns@newhope.cn;gaogj@newhope.cn;tengpf@newhope.cn";
+            String sendTo = "renns@newhope.cn";
             Date now = new Date();
             // 跨年添加情况
 

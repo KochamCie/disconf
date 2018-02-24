@@ -106,7 +106,9 @@ public class HandlerData {
         } else {
             SimpleDateFormat sdf = new SimpleDateFormat("yy年MM月");
             String dateStr = sdf.format(dateList.get(0).getSolarDate());
-            sqlList.add("1.ejb生产 [biz]库需要插入["+dateStr+"节假日]数据到[tb_holiday_record]表中");
+            sqlList.add("# ejb生产 [biz]库需要插入["+dateStr+"节假日]数据到[tb_holiday_record]表中");
+            sqlList.add("use xwjr_biz;");
+
         }
 
         for (ChinaDate date : dateList) {
@@ -211,7 +213,8 @@ public class HandlerData {
         } else {
             SimpleDateFormat sdf = new SimpleDateFormat("yy年MM月");
             String dateStr = sdf.format(dateList.get(0).getSolarDate());
-            sqlList.add("2.xwb_org生产 [xwb]库需要插入["+dateStr+"节假日]数据到[topenday]表中");
+            sqlList.add("# xwb_org生产 [xwb]库需要插入["+dateStr+"节假日]数据到[topenday]表中");
+            sqlList.add("use xwb_org;");
         }
         int i = index;
         for (ChinaDate date : dateList) {
@@ -219,9 +222,9 @@ public class HandlerData {
             String dateStr = sdf.format(date.getSolarDate());
             String groupStr = dateStr.replaceAll("-", "");
             if (!date.isWorkFlag()) {
-                sqlList.add("INSERT INTO `topenday` VALUES ('"+(groupStr)+"', '"+dateStr+"', '0');");
+                sqlList.add("INSERT INTO `topenday`(id,d_date,l_workflag) VALUES ('"+(groupStr)+"', '"+dateStr+"', '0');");
             } else {
-                sqlList.add("INSERT INTO `topenday` VALUES ('"+(groupStr)+"', '"+dateStr+"', '1');");
+                sqlList.add("INSERT INTO `topenday`(id,d_date,l_workflag) VALUES ('"+(groupStr)+"', '"+dateStr+"', '1');");
             }
         }
         return sqlList;
