@@ -6,6 +6,11 @@ import com.baidu.disconf.web.service.config.form.RoleResourceForm;
 import com.baidu.disconf.web.service.resource.MethodEnum;
 import com.baidu.dsp.common.constant.DataFormatConstants;
 import com.github.knightliao.apollo.utils.time.DateUtils;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,6 +102,10 @@ public class RoleResourceMgrImpl implements RoleResourceMgr {
     /**
      * @param pattern
      * @param method
+<<<<<<< HEAD
+=======
+     *
+>>>>>>> 2ac5c8275ad8cdc101522ad01a8ba87e53b73b68
      * @return
      */
     @Override

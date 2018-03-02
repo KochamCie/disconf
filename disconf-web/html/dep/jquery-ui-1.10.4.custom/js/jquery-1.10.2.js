@@ -3225,7 +3225,6 @@ jQuery.extend({
 
 		// Keep pipe for back-compat
 		promise.pipe = promise.then;
-alert(1)
 		// Add list-specific methods
 		jQuery.each( tuples, function( i, tuple ) {
 			var list = tuple[ 2 ],

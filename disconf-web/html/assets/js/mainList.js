@@ -28,6 +28,7 @@
                                 + item.name
                                 + '</a></li>';
                         });
+
                 $("#applist").html(html);
             }
         });
@@ -263,7 +264,6 @@
     // 渲染 配置 value
     //
     function fetchConfigValue(configId, object) {
-
         //
         // 获取APP信息
         //

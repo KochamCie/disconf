@@ -43,10 +43,6 @@ public final class MachineInfo {
 
         try {
             InetAddress addr = InetAddress.getLocalHost();
-            System.out.println("==============================>addr is null:"+ (null == addr));
-            if(null != addr){
-                System.out.println("==============================>ip is :"+addr.getHostAddress());
-            }
             String ip = addr.getHostAddress();
 
             return ip;

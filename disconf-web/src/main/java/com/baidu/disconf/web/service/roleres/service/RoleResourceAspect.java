@@ -119,6 +119,10 @@ public class RoleResourceAspect {
      * @param url
      * @param method
      * @param userRoleId
+<<<<<<< HEAD
+=======
+     *
+>>>>>>> 2ac5c8275ad8cdc101522ad01a8ba87e53b73b68
      * @return
      */
     private boolean isMethodAccessible(String url, RequestMethod method, Integer userRoleId) {
@@ -137,6 +141,10 @@ public class RoleResourceAspect {
      *
      * @param url
      * @param method
+<<<<<<< HEAD
+=======
+     *
+>>>>>>> 2ac5c8275ad8cdc101522ad01a8ba87e53b73b68
      * @return
      */
     private List<Integer> getPriviledgedRoles(String url, RequestMethod method) {
