@@ -5,6 +5,7 @@ import com.baidu.disconf.web.web.resource.ResourceController;
 import com.baidu.dsp.common.annotation.NoAuth;
 import com.baidu.dsp.common.constant.WebConstants;
 import com.baidu.dsp.common.controller.BaseController;
+import com.baidu.dsp.common.utils.email.LogMailBean;
 import com.baidu.dsp.common.vo.JsonObjectBase;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import org.slf4j.Logger;
@@ -30,6 +31,9 @@ public class SpiderController extends BaseController {
     @Autowired
     private SpiderMgr spiderMgr;
 
+    @Autowired
+    private LogMailBean logMailBean;
+
 
     @NoAuth
     @RequestMapping(value = "/rili", method = RequestMethod.GET, name = "获取节假日列表")
@@ -43,5 +47,21 @@ public class SpiderController extends BaseController {
         result = spiderMgr.handlerData(rootPage);
         return buildSuccess(result);
     }
+
+
+    @NoAuth
+    @RequestMapping(value = "/lanmao", method = RequestMethod.POST, name = "lanmaoMerge")
+    @ResponseBody
+    public JsonObjectBase sendMail() {
+        String sendTo = "renns@newhope.cn";
+        StringBuffer sb = new StringBuffer("");
+        sb.append("<br>");
+        sb.append("<br>");
+        sb.append("<a href=\"http://bjgit.kfxfd.cn:8099/groups/xwjr-p2p/merge_requests\">你有新的merge request请查看</a>");
+
+        boolean result = logMailBean.sendHtmlEmail(sendTo,"有新的merge request请查看", sb.toString());
+        return buildSuccess(result);
+    }
+
 
 }

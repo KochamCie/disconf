@@ -30,6 +30,8 @@
                         <value>/api/config/file</value>
                         <value>/api/config/list</value>
                         <value>/api/config/simple/list</value>
+                        <value>/api/spider/lanmao</value>
+                        <value>/api/spider/rili</value>
                     </list>
                 </property>
                 <property name="XONE_COOKIE_DOMAIN_STRING">
